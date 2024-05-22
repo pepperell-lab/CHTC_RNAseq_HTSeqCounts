@@ -1,0 +1,27 @@
+# Give Docker and argument and then set output, error, and log.
+universe = Docker
+docker_image = biocontainers/htseq
+arguments = "$(RUN) $(ANNOT_GFF)"
+executable = htseq.sh
+
+output = htseq_$(RUN).out
+error = htseq_$(RUN).err
+log = htseq_$(RUN).log
+
+# Rules to transfer and transferring files
+transfer_executable = TRUE
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+
+staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
+transfer_input_files = $(staging_prefix)/$(RUN).sort.bam
+transfer_output_files = $(RUN)_HTSeqCounts.txt
+transfer_output_remaps = "$(RUN)_HTSeqCounts.txt = $(staging_prefix)/$(RUN)_HTSeqCounts.txt"
+
+# Resource request and Queue job
+requirements = (Target.HasCHTCStaging==TRUE)
+request_cpus = 4
+request_memory = 4GB
+request_disk = 8GB
+
+queue
