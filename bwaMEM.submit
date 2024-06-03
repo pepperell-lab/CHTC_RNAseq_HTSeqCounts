@@ -1,6 +1,6 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
-docker_image = biocontainers/bwa
+docker_image = staphb/bwa
 arguments = "$(REF) $(RUN)"
 executable = bwaMEM.sh
 
