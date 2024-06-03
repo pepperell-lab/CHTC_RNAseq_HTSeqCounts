@@ -1,7 +1,7 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
 docker_image = staphb/samtools
-arguments = "sort -O bam -T $(RUN).sort $(RUN).bam"
+arguments = "sort -O bam -T $(RUN).sort $(RUN).bam > $(RUN).sort.bam"
 
 output = samtools_sort_$(RUN).out
 error = samtools_sort_$(RUN).err
