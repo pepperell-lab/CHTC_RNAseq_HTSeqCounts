@@ -1,4 +1,4 @@
 #!/bin/bash
 
-bwa index $(REF)
-bwa mem -M -t 8 $(REF) $(RUN)_1P.fq.gz $(RUN)_2P.fq.gz > $(RUN).sam
+bwa index $2
+bwa mem -M -t 8 $2 $1_1P.fq.gz $1_2P.fq.gz > $1.sam
