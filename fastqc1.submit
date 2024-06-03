@@ -1,6 +1,6 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
-docker_image = biocontainers/fastqc
+docker_image = staphb/fastqc
 arguments = "fastqc $(RUN)_R1_001.fastq.gz $(RUN)_R2_001.fastq.gz -t 4"
 
 output = fastqc1_$(RUN).out
@@ -14,8 +14,8 @@ when_to_transfer_output = ON_EXIT
 
 staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
 transfer_input_files = $(staging_prefix)/$(RUN)_R1_001.fastq.gz , $(staging_prefix)/$(RUN)_R2_001.fastq.gz
-transfer_output_files = $(RUN)_R1_001.fastq.zip, $(RUN)_R2_001.fastq.zip
-transfer_output_remaps = "$(RUN)_R1_001.fastq.zip = $(staging_prefix)/$(RUN)_R1_001.fastq.zip; $(RUN)_R2_001.fastq.zip = $(staging_prefix)/$(RUN)_R2_001.fastq.zip"
+#transfer_output_files = $(RUN)_R1_001.fastq.zip, $(RUN)_R2_001.fastq.zip
+#transfer_output_remaps = "$(RUN)_R1_001.fastq.zip = $(staging_prefix)/$(RUN)_R1_001.fastq.zip; $(RUN)_R2_001.fastq.zip = $(staging_prefix)/$(RUN)_R2_001.fastq.zip"
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
