@@ -1,6 +1,6 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
-docker_image = biocontainers/samtools
+docker_image = staphb/samtools
 arguments = "sort -O bam -T $(RUN).sort $(RUN).bam"
 
 output = samtools_sort_$(RUN).out
