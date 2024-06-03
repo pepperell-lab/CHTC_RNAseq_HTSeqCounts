@@ -1,7 +1,7 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
 docker_image = staphb/samtools
-arguments = "sort -O bam -T $(RUN).sort $(RUN).bam > $(RUN).sort.bam"
+arguments = "samtools sort -O bam -T 3151_17_S11.sort 3151_17_S11.bam -o 3151_17_S11.sort.bam"
 
 output = samtools_sort_$(RUN).out
 error = samtools_sort_$(RUN).err
@@ -20,7 +20,7 @@ transfer_output_remaps = "$(RUN).sort.bam = $(staging_prefix)/$(RUN).sort.bam"
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
 request_cpus = 1
-request_memory = 15GB
-request_disk = 20GB
+request_memory = 4GB
+request_disk = 10GB
 
 queue
