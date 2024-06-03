@@ -21,6 +21,6 @@ transfer_output_remaps = "$(RUN).bam = $(staging_prefix)/$(RUN).bam"
 requirements = (Target.HasCHTCStaging==TRUE)
 request_cpus = 1
 request_memory = 4GB 
-request_disk = 8GB
+request_disk = 20GB
 
 queue
