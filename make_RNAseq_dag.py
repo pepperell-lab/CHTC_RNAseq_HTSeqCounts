@@ -17,7 +17,7 @@ def get_args():
     parser.add_argument('input', help='File describing read data information')
     parser.add_argument('dagtemplate', help='Dag template')
     parser.add_argument('reference', help='Path to reference fasta file')
-    parser.add_argument('gff', help='Path to GFF annotation file')
+    #parser.add_argument('gff', help='Path to GFF annotation file')
     parser.add_argument('gtf', help='Path to GTF annotation file')
     
     return parser.parse_args()
