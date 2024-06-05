@@ -1,0 +1,33 @@
+JOB fastqc fastqc.submit
+VARS fastqc RUN="${run}"
+
+JOB trim trimmomatic.submit
+VARS trim RUN="${run}"
+
+JOB fastqc2 fastqc.submit
+VARS fastqc2 RUN="${run}"
+
+JOB bwa	bwaMEM.submit
+VARS bwa RUN="${run}"
+VARS bwa REF="${ref}"
+
+JOB view samtools_view.submit
+VARS view RUN="${run}"
+
+JOB sort samtools_sort.submit
+VARS sort RUN="${run}"
+
+JOB qc qualimapQC.submit
+VARS qc RUN="${run}"
+VARS qc ANNOT_GTF="${annot_gtf}"
+
+JOB count htseq.submit
+VARS count RUN="${run}"
+VARS count ANNOT_GFF="${annot_gff}"
+
+PARENT fastqc CHILD trim
+PARENT trim CHILD fastqc2
+PARENT fastqc2 CHILD bwa
+PARENT bwa CHILD view
+PARENT view CHILD sort
+PARENT sort CHILD qc count
