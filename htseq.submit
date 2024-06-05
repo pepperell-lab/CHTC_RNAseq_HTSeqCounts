@@ -1,7 +1,7 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
-docker_image = biocontainers/htseq
-arguments = "$(RUN) $(ANNOT_GFF)"
+docker_image = fischuu/htseq
+arguments = "$(RUN) $(ANNOT_GTF)"
 executable = htseq.sh
 
 output = htseq_$(RUN).out
@@ -14,7 +14,7 @@ should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 
 staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
-transfer_input_files = $(staging_prefix)/$(RUN).sort.bam, $(staging_prefix)/MtbNCBIH37Rv.gff
+transfer_input_files = $(staging_prefix)/$(RUN).sort.bam, $(staging_prefix)/MtbNCBIH37Rv.gtf
 transfer_output_files = $(RUN)_HTSeqCounts.txt
 transfer_output_remaps = "$(RUN)_HTSeqCounts.txt = $(staging_prefix)/$(RUN)_HTSeqCounts.txt"
 
