@@ -23,7 +23,7 @@ VARS qc ANNOT_GTF="${annot_gtf}"
 
 JOB count htseq.submit
 VARS count RUN="${run}"
-VARS count ANNOT_GFF="${annot_gff}"
+VARS count ANNOT_GTF="${annot_gtf}"
 
 PARENT fastqc CHILD trim
 PARENT trim CHILD fastqc2
