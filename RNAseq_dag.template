@@ -1,10 +1,10 @@
-JOB fastqc fastqc.submit
+JOB fastqc fastqc1.submit
 VARS fastqc RUN="${run}"
 
 JOB trim trimmomatic.submit
 VARS trim RUN="${run}"
 
-JOB fastqc2 fastqc.submit
+JOB fastqc2 fastqc2.submit
 VARS fastqc2 RUN="${run}"
 
 JOB bwa	bwaMEM.submit

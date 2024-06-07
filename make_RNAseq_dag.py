@@ -35,7 +35,7 @@ with open(args.input, 'r') as infile:
             inputList = line.split('\t')
             variableMap = {}
             variableMap['ref'] = args.reference
-            variableMap['annot_gff'] = args.gff
+            #variableMap['annot_gff'] = args.gff
             variableMap['annot_gtf'] = args.gtf
             variableMap['run'] = inputList[0]
             with open('{0}_RNAseq.dag'.format(variableMap['run']), 'w') as dagfile:
