@@ -1,2 +1,7 @@
 input.txt
 *.dag
+*.dag.condor.sub
+*.dag.lock
+*.err
+*.out
+*.log
