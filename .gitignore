@@ -4,3 +4,5 @@ input.txt
 *.err
 *.out
 *.log
+RNAseq_dag.template
+docker_stderror
