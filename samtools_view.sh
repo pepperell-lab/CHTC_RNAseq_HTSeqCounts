@@ -1,4 +1,4 @@
 #!/bin/bash
 
-samtools index $(RUN).sam
-samtools view -bhSu $(RUN).sam > $(RUN).bam
+samtools index $1.sam
+samtools view -bhSu $1.sam > $1.bam
