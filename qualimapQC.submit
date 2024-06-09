@@ -2,13 +2,14 @@
 universe = Docker
 docker_image = pegi3s/qualimap
 arguments = "$(RUN) $(ANNOT_GTF)"
+executable = qualimapQC.sh
 
 output = qualimap_$(RUN).out
 error = qualimap_$(RUN).err
 log = qualimap_$(RUN).log
 
 # Rules to transfer and transferring files
-transfer_executable = FALSE
+transfer_executable = TRUE
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 
