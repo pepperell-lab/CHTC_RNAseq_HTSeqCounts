@@ -45,11 +45,53 @@ The pipeline uses Directed Acyclic Graph (DAG) files to manage the workflow. The
 - **Template and Script for DAG Generation:**
   - `RNAseq_dag.template`: Template DAG file with placeholders (`$(RUN)`, `$(REF)`, `$(annot_gtf)`) to be replaced.
   - `make_RNAseq_dag.py`: Script to generate individual DAG files by replacing placeholders with actual values.
+- **Generating DAG Files:**
+  - To generate the individual DAG files from the template, run the following command:
+  ```bash
+  python3 make_RNAseq_dag.py input.txt RNAseq_dag.template MtbNCBIH37Rv.fa MtbNCBIH37Rv.gtf
+  ```
 
-## Generating DAG Files
+## CHTC HTCondor DAG Job Submission and Debugging Guide
 
-To generate the individual DAG files from the template, run the following command:
+### Submitting and Watching a DAG Job
 
-```bash
-python3 make_RNAseq_dag.py input.txt RNAseq_dag.template MtbNCBIH37Rv.fa MtbNCBIH37Rv.gtf
+To submit the DAG job described in `input_topLevel.dag` on CHTC, use the following command:
+
+```sh
+condor_submit_dag input_topLevel.dag
 ```
+
+To watch a DAG job on CHTC, use the following command:
+
+```sh
+condor_q -nobatch
+```
+
+### Debugging Errors in HTCondor Environment
+
+#### Step 1: Check the `.dag.rescue` File
+
+If your DAG job encounters an error, HTCondor will generate a `.dag.rescue` file. This file contains information about the state of the DAG at the time of failure and can be used to resume the job from where it left off.
+
+#### Step 2: Inspect Job Error, Log, and Output Files
+
+To debug a failed job, you need to identify which job failed(in `.dag.rescue` file) and inspect the job's error, log, and output files. 
+
+#### Step 3: Update the Submit File
+
+After identifying and fixing the issue that caused the job to fail, update the corresponding submit file. Once the submit file is updated, you can resume the job from the point of failure using the `.dag.rescue` file.
+
+To resume the job, submit the rescue DAG file:
+
+```sh
+condor_submit_dag input_topLevel.dag
+```
+
+This command will restart the DAG job from the last successful checkpoint, skipping the jobs that have already completed successfully(if rescue file is not deleted).
+
+
+---
+
+For more detailed information, refer to the [HTCondor Manual](https://htcondor.readthedocs.io/en/latest/).
+* DAG Workflow: https://htcondor.readthedocs.io/en/latest/automated-workflows/index.html
+* DAG Recovery: https://htcondor.readthedocs.io/en/23.0/automated-workflows/dagman-resubmit-failed.html
