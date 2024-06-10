@@ -7,13 +7,33 @@ This repository contains an RNA-Seq analysis pipeline designed to process sequen
 
 The pipeline consists of the following stages:
 
-1. **FastQC1:** Initial quality check of raw reads.
-2. **Trim:** Adapter and quality trimming of reads.
-3. **FastQC2:** Quality check of trimmed reads.
-4. **BWA:** Alignment of reads to the reference genome.
-5. **Samtools View:** Conversion of SAM to BAM format.
-6. **Samtools Sort:** Sorting of BAM files.
-7. **HTSeq & Qualimap:** Gene expression quantification and quality control of BAM files.
+1. **FastQC1:**
+   - Initial quality check of raw reads.
+   - Docker image: `staphb/fastqc`
+
+2. **Trim:**
+   - Adapter and quality trimming of reads.
+   - Docker image: `staphb/trimmomatic`
+
+3. **FastQC2:**
+   - Quality check of trimmed reads.
+   - Docker image: `staphb/fastqc`
+
+4. **BWA:**
+   - Alignment of reads to the reference genome.
+   - Docker image: `staphb/bwa`
+
+5. **Samtools View:**
+   - Conversion of SAM to BAM format.
+   - Docker image: `staphb/samtools`
+
+6. **Samtools Sort:**
+   - Sorting of BAM files.
+   - Docker image: `staphb/samtools`
+
+7. **HTSeq & Qualimap:**
+   - Gene expression quantification and quality control of BAM files.
+   - Docker images: `fischuu/htseq` and `pegi3s/qualimap`
 
 ## Required Files
 
@@ -34,7 +54,7 @@ To run the pipeline, the following files are needed:
 
 ## DAG Files
 
-The pipeline uses Directed Acyclic Graph (DAG) files to manage the workflow. These files are automatically generated and include:
+The pipeline uses HTcondor DAG files to manage the workflow. These files are automatically generated and include:
 
 - **Top-Level DAG File:** `input_topLevel.dag`
   - Runs individual DAG files for each sample.
@@ -46,7 +66,7 @@ The pipeline uses Directed Acyclic Graph (DAG) files to manage the workflow. The
   - `RNAseq_dag.template`: Template DAG file with placeholders (`$(RUN)`, `$(REF)`, `$(annot_gtf)`) to be replaced.
   - `make_RNAseq_dag.py`: Script to generate individual DAG files by replacing placeholders with actual values.
 - **Generating DAG Files:**
-  - To generate the individual DAG files from the template, run the following command:
+  - To generate the individual DAG files and top-level DAG file from the template, run the following command:
   ```bash
   python3 make_RNAseq_dag.py input.txt RNAseq_dag.template MtbNCBIH37Rv.fa MtbNCBIH37Rv.gtf
   ```
@@ -61,7 +81,7 @@ To submit the DAG job described in `input_topLevel.dag` on CHTC, use the followi
 condor_submit_dag input_topLevel.dag
 ```
 
-To watch a DAG job on CHTC, use the following command:
+To check the status of a DAG job on HTCondor, use the following command:
 
 ```sh
 condor_q -nobatch
@@ -79,7 +99,7 @@ To debug a failed job, you need to identify which job failed(in `.dag.rescue` fi
 
 #### Step 3: Update the Submit File
 
-After identifying and fixing the issue that caused the job to fail, update the corresponding submit file. Once the submit file is updated, you can resume the job from the point of failure using the `.dag.rescue` file.
+After identifying and fixing the issue, update the corresponding submit/shell file. Then resume the job from the point of failure using the `.dag.rescue` file.
 
 To resume the job, submit the rescue DAG file:
 
