@@ -1,6 +1,6 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
-docker_image = fischuu/htseq
+docker_image = genepattern/htseq_count
 arguments = "$(RUN) $(ANNOT_GTF)"
 executable = htseq.sh
 
