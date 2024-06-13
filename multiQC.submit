@@ -1,7 +1,7 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
 docker_image = staphb/multiqc
-executable = multiQC-kraken2.sh
+executable = multiQC.sh
 
 output = multiQC.out
 error = multiQC.err
