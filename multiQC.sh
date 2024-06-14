@@ -3,6 +3,9 @@ echo "tar multiQC ..."
 tar -xzf multiQC.tar.gz
 cd multiQC
 
+echo "tar qualimap ..."
+for f in *qualimap.tar.gz; do tar -xcf $f; done
+
 echo "running multiqc..."
 multiqc -ds .
 
