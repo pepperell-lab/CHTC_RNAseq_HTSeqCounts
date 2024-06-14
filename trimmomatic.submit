@@ -17,7 +17,7 @@ staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
 results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results
 multiqc_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results/MultiQC
 transfer_input_files = $(staging_prefix)/$(RUN)_R1_001.fastq.gz , $(staging_prefix)/$(RUN)_R2_001.fastq.gz, $(staging_prefix)/adapters.fa
-transfer_output_remaps = "$(RUN)_1U.fq.gz = $(results_staging_prefix)/$(RUN)_1U.fq.gz; $(RUN)_2U.fq.gz = $(results_staging_prefix)/$(RUN)_2U.fq.gz; $(RUN)_1P.fq.gz = $(staging_prefix)/$(RUN)_1P.fq.gz; $(RUN)_2P.fq.gz = $(staging_prefix)/$(RUN)_2P.fq.gz"
+transfer_output_remaps = "$(RUN)_1U.fq.gz = $(results_staging_prefix)/$(RUN)_1U.fq.gz; $(RUN)_2U.fq.gz = $(results_staging_prefix)/$(RUN)_2U.fq.gz; $(RUN)_1P.fq.gz = $(results_staging_prefix)/$(RUN)_1P.fq.gz; $(RUN)_2P.fq.gz = $(results_staging_prefix)/$(RUN)_2P.fq.gz"
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
