@@ -12,9 +12,10 @@ transfer_executable = TRUE
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 
-results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results
-transfer_input_files = $(results_staging_prefix)/MultiQC.tar.gz
+QC_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results/MultiQC
+transfer_input_files = $(QC_staging_prefix)/MultiQC.tar.gz
 transfer_output_files = multiqc-report.tar.gz
+transfer_output_remaps = $(QC_staging_prefix)/multiqc-report.tar.gz
 
 Requirements = (Target.HasCHTCStaging == true)
 request_cpus = 1
