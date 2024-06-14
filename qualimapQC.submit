@@ -14,9 +14,12 @@ should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 
 staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
-transfer_input_files = $(staging_prefix)/$(RUN).sort.bam, $(staging_prefix)/MtbNCBIH37Rv.gtf
+results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results
+QC_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results/MultiQC
+
+transfer_input_files = $(results_staging_prefix)/$(RUN).sort.bam, $(staging_prefix)/MtbNCBIH37Rv.gtf
 transfer_output_files = $(RUN).qualimap.tar.gz
-transfer_output_remaps = "$(RUN).qualimap.tar.gz = $(staging_prefix)/$(RUN).qualimap.tar.gz"
+transfer_output_remaps = "$(RUN).qualimap.tar.gz = $(QC_staging_prefix)/$(RUN).qualimap.tar.gz"
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
