@@ -22,7 +22,7 @@ transfer_output_remaps = "$(RUN)_R1_001_fastqc.zip = $(multiqc_staging_prefix)/$
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
 request_cpus = 1
-request_memory = 1GB
+request_memory = 2GB
 request_disk = 2GB
 
 queue
