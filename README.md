@@ -35,6 +35,10 @@ The pipeline consists of the following stages:
    - Gene expression quantification and quality control of BAM files.
    - Docker images: `fischuu/htseq` and `pegi3s/qualimap`
 
+8. **MultiQC:**
+   - Final quality control of all raw FASTA files, trimmed FASTA files, and BAM files.
+   - Docker image: `staphb/multiqc`
+
 ## Required Files
 
 To run the pipeline, the following files are needed:
