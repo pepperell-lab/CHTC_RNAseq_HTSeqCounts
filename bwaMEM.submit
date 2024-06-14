@@ -14,9 +14,10 @@ should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 
 staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
-transfer_input_files = $(staging_prefix)/$(RUN)_1P.fq.gz, $(staging_prefix)/$(RUN)_2P.fq.gz, $(staging_prefix)/MtbNCBIH37Rv.fa
+results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results
+transfer_input_files = $(results_staging_prefix)/$(RUN)_1P.fq.gz, $(results_staging_prefix)/$(RUN)_2P.fq.gz, $(staging_prefix)/MtbNCBIH37Rv.fa
 transfer_output_files = $(RUN).sam
-transfer_output_remaps = "$(RUN).sam = $(staging_prefix)/$(RUN).sam"
+transfer_output_remaps = "$(RUN).sam = $(results_staging_prefix)/$(RUN).sam"
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
