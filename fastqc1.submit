@@ -1,7 +1,7 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
 docker_image = staphb/fastqc
-arguments = "fastqc $(RUN)_R1_001.fastq.gz $(RUN)_R2_001.fastq.gz -t 4"
+arguments = "fastqc 5075_10_S1_R1_001.fastq.gz 5075_10_S1_R2_001.fastq.gz -t 4"
 
 output = fastqc1_$(RUN).out
 error = fastqc1_$(RUN).err
@@ -15,9 +15,9 @@ when_to_transfer_output = ON_EXIT
 staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
 results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results
 multiqc_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results/MultiQC
-transfer_input_files = $(staging_prefix)/$(RUN)_R1_001.fastq.gz, $(staging_prefix)/$(RUN)_R2_001.fastq.gz
-transfer_output_files = $(RUN)_R1_001_fastqc.zip, $(RUN)_R2_001_fastqc.zip
-transfer_output_remaps = "$(RUN)_R1_001_fastqc.zip = $(multiqc_staging_prefix)/$(RUN)_R1_001_fastqc.zip; $(RUN)_R2_001_fastqc.zip = $(multiqc_staging_prefix)/$(RUN)_R2_001_fastqc.zip"
+transfer_input_files = $(staging_prefix)/5075_10_S1_R1_001.fastq.gz, $(staging_prefix)/5075_10_S1_R2_001.fastq.gz
+transfer_output_files = 5075_10_S1_R1_001_fastqc.zip, 5075_10_S1_R2_001_fastqc.zip
+transfer_output_remaps = "5075_10_S1_R1_001_fastqc.zip = $(multiqc_staging_prefix)/5075_10_S1_R1_001_fastqc.zip; 5075_10_S1_R2_001_fastqc.zip = $(multiqc_staging_prefix)/5075_10_S1_R2_001_fastqc.zip"
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
