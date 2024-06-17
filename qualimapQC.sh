@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # run qualimap-bamqc
-qualimap bamqc -bam $1.sort.bam -outdir $1_bamqc --java-mem-size=2G
+qualimap bamqc -bam 5075_10_S1.sort.bam -outdir 5075_10_S1_bamqc --java-mem-size=2G
 
 # run qualimap-rnaseq
-qualimap rnaseq -bam $1.sort.bam -outdir $1_rnaseq -pe -gtf $2 --java-mem-size=2G
+qualimap rnaseq -bam 5075_10_S1.sort.bam -outdir 5075_10_S1_rnaseq -pe -gtf MtbNCBIH37Rv.gtf --java-mem-size=2G
 
-tar -zcvf $1.qualimap.tar.gz $1_bamqc/ $1_rnaseq/
+tar -zcvf 5075_10_S1.qualimap.tar.gz 5075_10_S1_bamqc/ 5075_10_S1_rnaseq/
