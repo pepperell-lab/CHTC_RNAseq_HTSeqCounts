@@ -1,12 +1,12 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
 docker_image = staphb/bwa
-arguments = "$(REF) $(RUN)"
+#arguments = "$(REF) $(RUN)"
 executable = bwaMEM.sh
 
-output = bwaMEM_$(RUN).out
-error = bwaMEM_$(RUN).err
-log = bwaMEM_$(RUN).log
+output = bwaMEM_5075_10_S1.out
+error = bwaMEM_5075_10_S1.err
+log = bwaMEM_5075_10_S1.log
 
 # Rules to transfer and transferring files
 transfer_executable = TRUE
@@ -15,9 +15,9 @@ when_to_transfer_output = ON_EXIT
 
 staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
 results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results
-transfer_input_files = $(results_staging_prefix)/$(RUN)_1P.fq.gz, $(results_staging_prefix)/$(RUN)_2P.fq.gz, $(staging_prefix)/MtbNCBIH37Rv.fa
-transfer_output_files = $(RUN).sam
-transfer_output_remaps = "$(RUN).sam = $(results_staging_prefix)/$(RUN).sam"
+transfer_input_files = $(results_staging_prefix)/5075_10_S1_1P.fq.gz, $(results_staging_prefix)/5075_10_S1_2P.fq.gz, $(staging_prefix)/MtbNCBIH37Rv.fa
+transfer_output_files = 5075_10_S1.sam
+transfer_output_remaps = "5075_10_S1.sam = $(results_staging_prefix)/5075_10_S1.sam"
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
