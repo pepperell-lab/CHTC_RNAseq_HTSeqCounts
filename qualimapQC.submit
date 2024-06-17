@@ -1,12 +1,12 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
 docker_image = pegi3s/qualimap
-arguments = "$(RUN) $(ANNOT_GTF)"
+#arguments = "$(RUN) $(ANNOT_GTF)"
 executable = qualimapQC.sh
 
-output = qualimap_$(RUN).out
-error = qualimap_$(RUN).err
-log = qualimap_$(RUN).log
+output = qualimap_5075_10_S1.out
+error = qualimap_5075_10_S1.err
+log = qualimap_5075_10_S1.log
 
 # Rules to transfer and transferring files
 transfer_executable = TRUE
@@ -17,9 +17,9 @@ staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
 results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results
 QC_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results/MultiQC
 
-transfer_input_files = $(results_staging_prefix)/$(RUN).sort.bam, $(staging_prefix)/MtbNCBIH37Rv.gtf
-transfer_output_files = $(RUN).qualimap.tar.gz
-transfer_output_remaps = "$(RUN).qualimap.tar.gz = $(QC_staging_prefix)/$(RUN).qualimap.tar.gz"
+transfer_input_files = $(results_staging_prefix)/5075_10_S1.sort.bam, $(staging_prefix)/MtbNCBIH37Rv.gtf
+transfer_output_files = 5075_10_S1.qualimap.tar.gz
+transfer_output_remaps = "5075_10_S1.qualimap.tar.gz = $(QC_staging_prefix)/5075_10_S1.qualimap.tar.gz"
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
