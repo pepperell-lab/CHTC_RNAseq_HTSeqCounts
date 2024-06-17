@@ -1,12 +1,12 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
 docker_image = staphb/samtools
-arguments = "$(RUN)"
+#arguments = "$(RUN)"
 executable = samtools_view.sh
 
-output = samtools_view_$(RUN).out
-error = samtools_view_$(RUN).err
-log = samtools_view_$(RUN).log
+output = samtools_view_5075_10_S1.out
+error = samtools_view_5075_10_S1.err
+log = samtools_view_5075_10_S1.log
 
 # Rules to transfer and transferring files
 transfer_executable = TRUE
@@ -16,8 +16,8 @@ when_to_transfer_output = ON_EXIT
 staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
 results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results
 multiqc_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results/MultiQC
-transfer_input_files = $(results_staging_prefix)/$(RUN).sam
-transfer_output_remaps = "$(RUN).bam = $(results_staging_prefix)/$(RUN).bam"
+transfer_input_files = $(results_staging_prefix)/5075_10_S1.sam
+transfer_output_remaps = "5075_10_S1.bam = $(results_staging_prefix)/5075_10_S1.bam"
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
