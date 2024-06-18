@@ -119,3 +119,7 @@ This command will restart the DAG job from the last successful checkpoint, skipp
 For more detailed information, refer to the [HTCondor Manual](https://htcondor.readthedocs.io/en/latest/).
 * DAG Workflow: https://htcondor.readthedocs.io/en/latest/automated-workflows/index.html
 * DAG Recovery: https://htcondor.readthedocs.io/en/23.0/automated-workflows/dagman-resubmit-failed.html
+
+## Visualizations
+![RNAseqOnCHTC (4)](https://github.com/pepperell-lab/RNASeq_CHTC/assets/108096710/83429397-70bc-45d0-ad0c-f46b9e433ba9)
+![RNAseq_CHTC_FileLocations (3)](https://github.com/pepperell-lab/RNASeq_CHTC/assets/108096710/013a80e2-b7d3-4347-a9ab-c349e04f3937)
