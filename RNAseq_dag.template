@@ -13,9 +13,11 @@ VARS bwa REF="${ref}"
 
 JOB view samtools_view.submit
 VARS view RUN="${run}"
+SCRIPT POST view /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/Results/$(RUN).sam
 
 JOB sort samtools_sort.submit
 VARS sort RUN="${run}"
+SCRIPT POST sort /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/Results/$(RUN).bam
 
 JOB qc qualimapQC.submit
 VARS qc RUN="${run}"
@@ -24,6 +26,8 @@ VARS qc ANNOT_GTF="${annot_gtf}"
 JOB count htseq.submit
 VARS count RUN="${run}"
 VARS count ANNOT_GTF="${annot_gtf}"
+
+FINAL rm /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/Results/$(RUN).sort.bam
 
 PARENT fastqc CHILD trim
 PARENT trim CHILD fastqc2
