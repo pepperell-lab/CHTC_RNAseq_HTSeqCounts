@@ -27,8 +27,6 @@ JOB count htseq.submit
 VARS count RUN="${run}"
 VARS count ANNOT_GTF="${annot_gtf}"
 
-FINAL rm /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/Results/${run}.sort.bam
-
 PARENT fastqc CHILD trim
 PARENT trim CHILD fastqc2
 PARENT fastqc2 CHILD bwa
