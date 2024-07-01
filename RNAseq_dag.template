@@ -3,8 +3,8 @@ VARS fastqc RUN="${run}"
 
 JOB trim trimmomatic.submit
 VARS trim RUN="${run}"
-SCRIPT POST trimmomatic /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/${run}_R1_001.fastq.gz
-SCRIPT POST trimmomatic /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/${run}_R2_001.fastq.gz
+SCRIPT POST trim /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/${run}_R1_001.fastq.gz
+SCRIPT POST trim /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/${run}_R2_001.fastq.gz
 
 JOB fastqc2 fastqc2.submit
 VARS fastqc2 RUN="${run}"
