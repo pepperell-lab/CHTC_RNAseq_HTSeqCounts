@@ -22,7 +22,7 @@ transfer_output_remaps = "$(RUN)_1P.fq.gz = $(results_staging_prefix)/$(RUN)_1P.
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
 request_cpus = 4
-request_memory = 20GB
+request_memory = 30GB
 request_disk = 20GB
 
 queue
