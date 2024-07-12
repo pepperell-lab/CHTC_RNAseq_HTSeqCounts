@@ -15,11 +15,11 @@ SCRIPT POST bwa /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/Results/${run
 
 JOB view samtools_view.submit
 VARS view RUN="${run}"
-SCRIPT POST view /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/Results/${run}.sam
+SCRIPT POST view /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/Results/${run}.sam.gz
 
 JOB sort samtools_sort.submit
 VARS sort RUN="${run}"
-SCRIPT POST sort /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/Results/${run}.bam
+SCRIPT POST sort /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/Results/${run}.bam.gz
 
 JOB qc qualimapQC.submit
 VARS qc RUN="${run}"
@@ -30,7 +30,7 @@ VARS count RUN="${run}"
 VARS count ANNOT_GTF="${annot_gtf}"
 
 JOB cleanup dummy.submit NOOP
-SCRIPT POST cleanup /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/Results/${run}.sort.bam 
+SCRIPT POST cleanup /bin/rm /staging/groups/pepperell_group/Mtb_RNAseq/Results/${run}.sort.bam.gz 
 
 PARENT fastqc CHILD trim
 PARENT trim CHILD fastqc2

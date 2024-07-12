@@ -1,7 +1,7 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
 docker_image = staphb/samtools
-arguments = "samtools sort -O bam -T $(RUN).sort $(RUN).bam -o $(RUN).sort.bam"
+arguments = "gunzip -c ${RUN}.bam.gz | samtools sort -O bam -T ${RUN}.sort -o ${RUN}.sort.bam - | gzip > ${RUN}.sort.bam.gz"
 
 output = samtools_sort_$(RUN).out
 error = samtools_sort_$(RUN).err
@@ -15,9 +15,9 @@ when_to_transfer_output = ON_EXIT
 staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
 results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results
 
-transfer_input_files = $(results_staging_prefix)/$(RUN).bam
-transfer_output_files = $(RUN).sort.bam
-transfer_output_remaps = "$(RUN).sort.bam = $(results_staging_prefix)/$(RUN).sort.bam"
+transfer_input_files = $(results_staging_prefix)/$(RUN).bam.gz
+transfer_output_files = $(RUN).sort.bam.gz
+transfer_output_remaps = "$(RUN).sort.bam.gz = $(results_staging_prefix)/$(RUN).sort.bam.gz"
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
