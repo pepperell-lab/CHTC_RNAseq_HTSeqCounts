@@ -1,7 +1,7 @@
 # Give Docker and argument and then set output, error, and log.
 universe = Docker
 docker_image = staphb/samtools
-arguments = "gunzip -c ${RUN}.bam.gz | samtools sort -O bam -T ${RUN}.sort -o ${RUN}.sort.bam - | gzip > ${RUN}.sort.bam.gz"
+arguments = "gunzip -c $(RUN).bam.gz | samtools sort -O bam -T $(RUN).sort -o $(RUN).sort.bam - | gzip > $(RUN).sort.bam.gz"
 
 output = samtools_sort_$(RUN).out
 error = samtools_sort_$(RUN).err
