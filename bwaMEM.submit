@@ -23,6 +23,6 @@ transfer_output_remaps = "$(RUN).sam.gz = $(results_staging_prefix)/$(RUN).sam.g
 requirements = (Target.HasCHTCStaging==TRUE)
 request_cpus = 8
 request_memory = 50GB 
-request_disk = 50GB
+request_disk = 60GB
 
 queue
