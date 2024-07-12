@@ -16,14 +16,14 @@ when_to_transfer_output = ON_EXIT
 staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
 results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results
 
-transfer_input_files = $(results_staging_prefix)/$(RUN).sort.bam.gz, $(staging_prefix)/MtbNCBIH37Rv.gtf
+transfer_input_files = $(results_staging_prefix)/$(RUN).sort.bam.gz, $(staging_prefix)/MtbNCBIH37Rv_ncRNAs_sORFs.gtf
 transfer_output_files = $(RUN)_HTSeqCounts.txt
 transfer_output_remaps = "$(RUN)_HTSeqCounts.txt = $(results_staging_prefix)/$(RUN)_HTSeqCounts.txt"
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
 request_cpus = 4
-request_memory = 4GB
+request_memory = 25GB
 request_disk = 8GB
 
 queue
