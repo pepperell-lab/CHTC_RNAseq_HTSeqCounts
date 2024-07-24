@@ -17,7 +17,7 @@ staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
 results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results
 multiqc_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results/MultiQC
 transfer_input_files = $(results_staging_prefix)/$(RUN).sam.gz
-transfter_output_files = $(RUN).bam.gz
+transfer_output_files = $(RUN).bam.gz
 transfer_output_remaps = "$(RUN).bam.gz = $(results_staging_prefix)/$(RUN).bam.gz"
 
 # Resource request and Queue job
