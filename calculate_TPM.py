@@ -37,7 +37,7 @@ def read_HTSeqCount(filename):
 def write_output(output_file, gene_length, counts):
     with open(output_file, 'w') as file:
         # Prepare header
-        file.write('Gene_name\tLength\tCount\tTPM\n')
+        file.write('Gene_name\tLength\tCount\tRPK\tTPM\n')
         
         # Compute combined data
         total_rpk = 0
@@ -54,7 +54,7 @@ def write_output(output_file, gene_length, counts):
         # Write data rows
         for gene, length, count, rpk in rows:
             tpm = rpk / scale_factor if scale_factor else 0
-            file.write(f'{gene}\t{length}\t{count}\t{tpm:.4f}\n')
+            file.write(f'{gene}\t{length}\t{count}\t{rpk:.4f}\t{tpm:.4f}\n')
 
 def main():
     parser = argparse.ArgumentParser(description='Process a text file.')
