@@ -45,7 +45,7 @@ To run the pipeline, the following files are needed:
 
 - **Reference File:** `MtbNCBIH37Rv.fa`
 - **Adapter File:** `adapters.fa`
-- **GFF File:** `MtbNCBIH37Rv.gff`
+- **GTF File:** `MtbNCBIH37Rv.gtf`
 - **Data Files:** Raw sequencing reads
   - `3151_19_S13_R1_001.fastq.gz`
   - `3151_19_S13_R2_001.fastq.gz`
