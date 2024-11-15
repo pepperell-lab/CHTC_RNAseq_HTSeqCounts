@@ -1,4 +1,4 @@
-# RNASeq_CHTC
+# Pepperell_Lab_RNAseq_HTSeqCounts_Pipeline
 ### Updated versions of condor scripts for work on CHTC for RNAseq using Docker containers. 
 
 This repository contains an RNA-Seq analysis pipeline designed to process sequencing data through several stages on CHTC, from quality control to gene expression quantification.
