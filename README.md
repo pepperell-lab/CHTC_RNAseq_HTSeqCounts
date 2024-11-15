@@ -122,4 +122,4 @@ For more detailed information, refer to the [HTCondor Manual](https://htcondor.r
 
 ## Visualizations
 ![RNAseqOnCHTC (4)](https://github.com/pepperell-lab/RNASeq_CHTC/assets/108096710/83429397-70bc-45d0-ad0c-f46b9e433ba9)
-![RNAseq_CHTC_FileLocations (3)](https://github.com/pepperell-lab/RNASeq_CHTC/assets/108096710/013a80e2-b7d3-4347-a9ab-c349e04f3937)
+![CHTC_RNAseqData_Organization](https://github.com/user-attachments/assets/4eb7d4fd-3bb1-4de0-9cb5-383f97328e18)
