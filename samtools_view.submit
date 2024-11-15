@@ -13,9 +13,9 @@ transfer_executable = TRUE
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 
-staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq
-results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results
-multiqc_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/Results/MultiQC
+staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeq
+results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeq/Results
+multiqc_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeq/Results/MultiQC
 transfer_input_files = $(results_staging_prefix)/$(RUN).sam.gz
 transfer_output_files = $(RUN).bam.gz
 transfer_output_remaps = "$(RUN).bam.gz = $(results_staging_prefix)/$(RUN).bam.gz"
