@@ -13,8 +13,8 @@ transfer_executable = TRUE
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 
-staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeq
-results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeq/Results
+staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts
+results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results
 
 transfer_input_files = $(results_staging_prefix)/$(RUN).bam.gz
 transfer_output_files = $(RUN).sort.bam.gz
