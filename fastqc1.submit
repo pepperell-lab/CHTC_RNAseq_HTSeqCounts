@@ -12,9 +12,9 @@ transfer_executable = FALSE
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 
-staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeq
-results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeq/Results
-multiqc_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeq/Results/MultiQC
+staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts
+results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results
+multiqc_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results/MultiQC
 transfer_input_files = $(staging_prefix)/$(RUN)_R1_001.fastq.gz, $(staging_prefix)/$(RUN)_R2_001.fastq.gz
 transfer_output_files = $(RUN)_R1_001_fastqc.zip, $(RUN)_R2_001_fastqc.zip
 transfer_output_remaps = "$(RUN)_R1_001_fastqc.zip = $(multiqc_staging_prefix)/$(RUN)_R1_001_fastqc.zip; $(RUN)_R2_001_fastqc.zip = $(multiqc_staging_prefix)/$(RUN)_R2_001_fastqc.zip"
