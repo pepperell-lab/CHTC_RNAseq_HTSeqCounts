@@ -3,9 +3,9 @@ universe = Docker
 docker_image = staphb/multiqc
 executable = multiQC.sh
 
-output = multiQC.out
-error = multiQC.err
-log = multiQC.log
+#output = multiQC.out
+#error = multiQC.err
+#log = multiQC.log
 
 # Rules to transfer and transferring files
 transfer_executable = TRUE
