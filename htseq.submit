@@ -4,9 +4,9 @@ docker_image = genepattern/htseq_count
 arguments = "$(RUN) $(ANNOT_GTF)"
 executable = htseq.sh
 
-output = htseq_$(RUN).out
-error = htseq_$(RUN).err
-log = htseq_$(RUN).log
+#output = htseq_$(RUN).out
+#error = htseq_$(RUN).err
+#log = htseq_$(RUN).log
 
 # Rules to transfer and transferring files
 transfer_executable = TRUE
