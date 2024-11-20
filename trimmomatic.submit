@@ -4,9 +4,9 @@ docker_image = staphb/trimmomatic
 arguments = "$(RUN)"
 executable = trimmomatic.sh
 
-output = trimmomatic_$(RUN).out
-error = trimmomatic_$(RUN).err
-log = trimmomatic_$(RUN).log
+#output = trimmomatic_$(RUN).out
+#error = trimmomatic_$(RUN).err
+#log = trimmomatic_$(RUN).log
 
 # Rules to transfer and transferring files
 transfer_executable = TRUE
