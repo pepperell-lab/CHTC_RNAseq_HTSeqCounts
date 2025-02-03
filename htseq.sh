@@ -1,6 +1,6 @@
 #!/bin/bash
-staging_prefix = /staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts
-results_staging_prefix = /staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results
+staging_prefix=/staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts
+results_staging_prefix=/staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results
 cp format_HTSeqCounts.py $results_staging_prefix/$1.sort.bam.gz $staging_prefix/$2 ./
 
 gunzip -c $1.sort.bam.gz > $1.sort.bam
