@@ -1,7 +1,6 @@
 #!/bin/bash
-staging_prefix = /staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts
-results_staging_prefix = /staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results
-multiqc_staging_prefix = /staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results/MultiQC
+results_staging_prefix=/staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results
+multiqc_staging_prefix=/staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results/MultiQC
 
 cp $results_staging_prefix/$1.sam.gz ./
 
@@ -10,4 +9,5 @@ gunzip -c $1.sam.gz > $1.sam
 samtools view -bhSu $1.sam | gzip > $1.bam.gz
 
 mv $1.bam.gz $results_staging_prefix/
+
 rm $results_staging_prefix/$1.sam.gz
