@@ -11,7 +11,7 @@ executable = htseq.sh
 # Rules to transfer and transferring files
 transfer_executable = TRUE
 should_transfer_files = IF_NEEDED
-when_to_transfer_output = ""
+transfer_output_files = ""
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
