@@ -8,3 +8,4 @@ trimmomatic PE $1_R1_001.fastq.gz $1_R2_001.fastq.gz -baseout $1.fq.gz -threads 
 mv $1_1P.fq.gz $results_staging_prefix/
 mv $1_2P.fq.gz $results_staging_prefix/
 
+rm $staging_prefix/$1_R1_001.fastq.gz $staging_prefix/$1_R2_001.fastq.gz
