@@ -1,4 +1,7 @@
 #!/bin/bash
+results_staging_prefix = /staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results
+cp $results_staging_prefix/MultiQC.tar.gz ./
+
 echo "tar multiQC ..."
 tar -xf MultiQC.tar.gz
 
@@ -11,4 +14,5 @@ multiqc -ds .
 mv multiqc_report.html multiqc_data/
 mv multiqc_data/ multiqc-report
 tar -czvf multiqc-report.tar.gz multiqc-report/
-mv multiqc-report.tar.gz ../
+mv multiqc-report.tar.gz $multiqc_staging_prefix/
+
