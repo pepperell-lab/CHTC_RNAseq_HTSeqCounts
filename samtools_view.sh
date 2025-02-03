@@ -1,6 +1,5 @@
 #!/bin/bash
 results_staging_prefix=/staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results
-multiqc_staging_prefix=/staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results/MultiQC
 
 cp $results_staging_prefix/$1.sam.gz ./
 
