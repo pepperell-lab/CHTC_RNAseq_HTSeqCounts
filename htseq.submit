@@ -10,15 +10,9 @@ executable = htseq.sh
 
 # Rules to transfer and transferring files
 transfer_executable = TRUE
-should_transfer_files = YES
-when_to_transfer_output = ON_EXIT
-
-staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts
-results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results
-
-transfer_input_files = format_HTSeqCounts.py, $(results_staging_prefix)/$(RUN).sort.bam.gz, $(staging_prefix)/$(ANNOT_GTF)
-transfer_output_files = $(RUN)_HTSeqCounts.txt
-transfer_output_remaps = "$(RUN)_HTSeqCounts.txt = $(results_staging_prefix)/$(RUN)_HTSeqCounts.txt"
+should_transfer_files = IF_NEEDED
+transfer_input_files = format_HTSeqCounts.py
+transfer_output_files = ""
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)

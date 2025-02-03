@@ -10,14 +10,8 @@ executable = bwaMEM.sh
 
 # Rules to transfer and transferring files
 transfer_executable = TRUE
-should_transfer_files = YES
-when_to_transfer_output = ON_EXIT
-
-staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts
-results_staging_prefix = file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results
-transfer_input_files = $(results_staging_prefix)/$(RUN)_1P.fq.gz, $(results_staging_prefix)/$(RUN)_2P.fq.gz, $(staging_prefix)/$(REF)
-transfer_output_files = $(RUN).sam.gz
-transfer_output_remaps = "$(RUN).sam.gz = $(results_staging_prefix)/$(RUN).sam.gz"
+should_transfer_files = IF_NEEDED
+transfer_output_files = ""
 
 # Resource request and Queue job
 requirements = (Target.HasCHTCStaging==TRUE)
