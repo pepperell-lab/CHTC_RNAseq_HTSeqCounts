@@ -11,6 +11,7 @@ executable = htseq.sh
 # Rules to transfer and transferring files
 transfer_executable = TRUE
 should_transfer_files = IF_NEEDED
+transfer_input_files = format_HTSeqCounts.py
 transfer_output_files = ""
 
 # Resource request and Queue job
