@@ -4,9 +4,9 @@ docker_image = staphb/fastqc
 arguments = "$(RUN)"
 executable = fastqc1.sh
 
-#output = fastqc1_$(RUN).out
-#error = fastqc1_$(RUN).err
-#log = fastqc1_$(RUN).log
+output = fastqc1_$(RUN).out
+error = fastqc1_$(RUN).err
+log = fastqc1_$(RUN).log
 
 # Rules to transfer and transferring files
 transfer_executable = TRUE

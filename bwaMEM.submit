@@ -4,9 +4,9 @@ docker_image = staphb/bwa
 arguments = "$(REF) $(RUN)"
 executable = bwaMEM.sh
 
-#output = bwaMEM_$(RUN).out
-#error = bwaMEM_$(RUN).err
-#log = bwaMEM_$(RUN).log
+output = bwaMEM_$(RUN).out
+error = bwaMEM_$(RUN).err
+log = bwaMEM_$(RUN).log
 
 # Rules to transfer and transferring files
 transfer_executable = TRUE
