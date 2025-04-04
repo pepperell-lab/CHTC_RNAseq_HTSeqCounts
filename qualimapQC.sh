@@ -1,7 +1,7 @@
 #!/bin/bash
-staging_prefix=file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts
-results_staging_prefix=file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results
-multiqc_staging_prefix=file:///staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results/MultiQC
+staging_prefix=/staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts
+results_staging_prefix=/staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results
+multiqc_staging_prefix=/staging/groups/pepperell_group/Mtb_RNAseq/HTSeqCounts/Results/MultiQC
 cp $results_staging_prefix/$1.sort.bam.gz $staging_prefix/$2 ./
 
 gunzip -c $1.sort.bam.gz > $1.sort.bam

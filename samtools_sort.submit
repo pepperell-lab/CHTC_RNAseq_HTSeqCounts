@@ -4,9 +4,9 @@ docker_image = staphb/samtools
 arguments = "$(RUN)"
 executable = samtools_sort.sh
 
-output = samtools_sort_$(RUN).out
-error = samtools_sort_$(RUN).err
-log = samtools_sort_$(RUN).log
+#output = samtools_sort_$(RUN).out
+#error = samtools_sort_$(RUN).err
+#log = samtools_sort_$(RUN).log
 
 # Rules to transfer and transferring files
 transfer_executable = TRUE
